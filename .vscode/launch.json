@@ -11,8 +11,10 @@
             "cwd": "${workspaceFolder}",
             "coreConfigs": [
                 {
+                    //!MODIFY
+                    "programBinary": ".\\target\\thumbv7m-none-eabi\\release\\stm32f103c8tx-ad8232-data-transfer-rs",
                     "coreIndex": 0,
-                    "svdFile": "stm32f103.svd.patched",
+                    // "svdFile": "stm32f103.svd.patched",
                     "rttEnabled": true,
                     "rttChannelFormats": [
                         {
