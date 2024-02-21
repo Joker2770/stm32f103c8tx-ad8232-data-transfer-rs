@@ -15,8 +15,7 @@ use nb::block;
 
 use cortex_m_rt::entry;
 use stm32f1xx_hal::{
-    adc,
-    pac,
+    adc, pac,
     prelude::*,
     serial::{Config, Serial},
 };
@@ -89,8 +88,8 @@ fn main() -> ! {
         sent[1] = data.to_be_bytes()[0];
         sent[2] = data.to_le_bytes()[0];
         sent[3] = sent[1].bitxor(sent[2]);
-        for i in sent {
-            block!(serial.tx.write(*i)).unwrap_infallible();
+        for c in sent {
+            block!(serial.tx.write(*c)).unwrap_infallible();
         }
         delay.delay(10.millis());
     }
