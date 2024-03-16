@@ -91,6 +91,6 @@ fn main() -> ! {
         for c in sent {
             block!(serial.tx.write(*c)).unwrap_infallible();
         }
-        delay.delay(10.millis());
+        delay.delay(100.millis());
     }
 }
